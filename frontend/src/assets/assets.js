@@ -16,6 +16,20 @@ import iconGift from './images/icons/icon_gift.webp';
 import iconGiftHover from './images/icons/icon_gift_hover.webp';
 import iconProtect from './images/icons/icon_protect.webp';
 import iconProtectHover from './images/icons/icon_protect_hover.webp';
+import iconCanHoCaoCap from './images/icons/icon_CanHoCaoCap.webp';
+import iconCanHoCaoCapHover from './images/icons/icon_CanHoCaoCap_hover.webp';
+import iconCanHoChungCu from './images/icons/icon_CanHoChungCu.webp';
+import iconCanHoChungCuHover from './images/icons/icon_CanHoChungCu_hover.webp';
+import iconCanHoDuAnNen from './images/icons/icon_CanHoDuAnNen.webp';
+import iconCanHoDuAnNenHover from './images/icons/icon_CanHoDuAnNen_hover.webp';
+import iconVanPhongCaoOc from './images/icons/icon_VanPhongCaoOc.webp';
+import iconVanPhongCaoOcHover from './images/icons/icon_VanPhongCaoOc_hover.png';
+import iconNhaOKhuCaoTang from './images/icons/icon_NhaOKhuCaoTang.webp';
+import iconNhaOKhuCaoTangHover from './images/icons/icon_NhaOKhuCaoTang_hover.webp';
+import iconNhaOKhuDoThi from './images/icons/icon_NhaOKhuDoThi.webp';
+import iconNhaOKhuDoThiHover from './images/icons/icon_NhaOKhuDoThi_hover.webp';
+import iconCanHoKhuNghiDuong from './images/icons/icon_CanHoKhuNghiDuong.webp';
+import iconCanHoKhuNghiDuongHover from './images/icons/icon_CanHoKhuNghiDuong_hover.webp';
 
 import CanHo2PN from './images/products/CanHo/CanHo2PN.webp';
 
@@ -35,6 +49,20 @@ export const assets = {
     iconGiftHover,
     iconProtect,
     iconProtectHover,
+    iconCanHoCaoCap,
+    iconCanHoCaoCapHover,
+    iconCanHoChungCu,
+    iconCanHoChungCuHover,
+    iconCanHoDuAnNen,
+    iconCanHoDuAnNenHover,
+    iconVanPhongCaoOc,
+    iconVanPhongCaoOcHover,
+    iconNhaOKhuCaoTang,
+    iconNhaOKhuCaoTangHover,
+    iconNhaOKhuDoThi,
+    iconNhaOKhuDoThiHover,
+    iconCanHoKhuNghiDuong,
+    iconCanHoKhuNghiDuongHover,
     CanHo2PN,
 };
 
