@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { assets, product } from '@/assets/assets';
+import ProductItem from '@/components/ProductItem';
 
 function ProductsSelling() {
     return (
@@ -11,13 +12,14 @@ function ProductsSelling() {
             </div>
             <div className="grid grid-cols-3 gap-6">
                 {product.map((item, index) => (
-                    <div key={index} className="flex flex-col">
-                        <img src={item.image} alt="" className="w-[370px] h-[280px]" />
-                        <div className="pt-8">
-                            <h1>{item.name}</h1>
-                            <p className="pt-3">{item.price}</p>
-                        </div>
-                    </div>
+                    <ProductItem
+                        key={index}
+                        id={item.id}
+                        slug={item.slug}
+                        image={item.image}
+                        name={item.name}
+                        price={item.price}
+                    />
                 ))}
             </div>
             <div className="mt-12 flex justify-center">

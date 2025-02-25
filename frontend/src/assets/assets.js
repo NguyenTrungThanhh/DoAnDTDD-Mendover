@@ -8,6 +8,7 @@ import banner1 from './images/banner/banner1.webp';
 import banner2 from './images/banner/banner2.webp';
 import banner3 from './images/banner/banner3.webp';
 import bannerService from './images/banner/banner_services.webp';
+import bannerAll from './images/banner/bannerAll.webp';
 
 import iconName from './images/icons/icon_title_lf-min.webp';
 import iconPhone from './images/icons/icon_phone.webp';
@@ -31,6 +32,10 @@ import iconNhaOKhuDoThiHover from './images/icons/icon_NhaOKhuDoThi_hover.webp';
 import iconCanHoKhuNghiDuong from './images/icons/icon_CanHoKhuNghiDuong.webp';
 import iconCanHoKhuNghiDuongHover from './images/icons/icon_CanHoKhuNghiDuong_hover.webp';
 
+import author1 from './images/author/author1.webp';
+import author2 from './images/author/author2.webp';
+import author3 from './images/author/author3.webp';
+
 import CanHo2PN from './images/products/CanHo/CanHo2PN.webp';
 
 export const assets = {
@@ -42,6 +47,7 @@ export const assets = {
     banner2,
     banner3,
     bannerService,
+    bannerAll,
     iconName,
     iconPhone,
     iconPhoneHover,
@@ -63,6 +69,9 @@ export const assets = {
     iconNhaOKhuDoThiHover,
     iconCanHoKhuNghiDuong,
     iconCanHoKhuNghiDuongHover,
+    author1,
+    author2,
+    author3,
     CanHo2PN,
 };
 
@@ -70,36 +79,42 @@ export const product = [
     {
         id: 1,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },
     {
         id: 2,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },
     {
         id: 3,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },
     {
-        id: 1,
+        id: 4,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },
     {
-        id: 2,
+        id: 5,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },
     {
-        id: 3,
+        id: 6,
         name: 'Căn hộ 2PN tại Pearl Plaza',
+        slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
     },

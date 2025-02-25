@@ -1,3 +1,4 @@
+import BannerEvaluate from '@/components/BannerEvaluate';
 import BannerInfo from '@/components/BannerInfo';
 import BannerService from '@/components/BannerService';
 import ProductsSelling from '@/components/ProductsSelling/ProductsSelling';
@@ -12,6 +13,7 @@ function Home() {
             <ProductsSelling />
             <BannerService />
             <ProductStandOut />
+            <BannerEvaluate />
         </div>
     );
 }
