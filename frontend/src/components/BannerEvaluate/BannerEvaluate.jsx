@@ -13,7 +13,6 @@ function BannerEvaluate() {
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     slidesPerView={1}
-                    loop={true}
                     autoplay={{ delay: 9999999 }}
                     pagination={{ clickable: true }}
                     className="relative z-0 h-[396px]"

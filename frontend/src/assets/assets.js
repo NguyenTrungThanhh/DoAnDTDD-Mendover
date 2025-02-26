@@ -1,4 +1,5 @@
 import logo from './images/logo/logo.webp';
+import logoFooter from './images/logo/logo_footer.webp';
 
 import slider1 from './images/slider/slider1.webp';
 import slider2 from './images/slider/slider2.webp';
@@ -36,10 +37,16 @@ import author1 from './images/author/author1.webp';
 import author2 from './images/author/author2.webp';
 import author3 from './images/author/author3.webp';
 
+import partner1 from './images/partner/partner1.webp';
+import partner2 from './images/partner/partner2.webp';
+import partner3 from './images/partner/partner3.webp';
+import partner4 from './images/partner/partner4.webp';
+
 import CanHo2PN from './images/products/CanHo/CanHo2PN.webp';
 
 export const assets = {
     logo,
+    logoFooter,
     slider1,
     slider2,
     slider3,
@@ -72,6 +79,10 @@ export const assets = {
     author1,
     author2,
     author3,
+    partner1,
+    partner2,
+    partner3,
+    partner4,
     CanHo2PN,
 };
 
