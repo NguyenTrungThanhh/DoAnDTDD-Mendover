@@ -32,6 +32,9 @@ import iconNhaOKhuDoThi from './images/icons/icon_NhaOKhuDoThi.webp';
 import iconNhaOKhuDoThiHover from './images/icons/icon_NhaOKhuDoThi_hover.webp';
 import iconCanHoKhuNghiDuong from './images/icons/icon_CanHoKhuNghiDuong.webp';
 import iconCanHoKhuNghiDuongHover from './images/icons/icon_CanHoKhuNghiDuong_hover.webp';
+import iconCategory from './images/icons/icon_category.png';
+import iconCategoryHover from './images/icons/icon_category_hover.webp';
+import iconBreadcrumb from './images/icons/icon_breadcrumb-min.webp';
 
 import author1 from './images/author/author1.webp';
 import author2 from './images/author/author2.webp';
@@ -76,6 +79,9 @@ export const assets = {
     iconNhaOKhuDoThiHover,
     iconCanHoKhuNghiDuong,
     iconCanHoKhuNghiDuongHover,
+    iconCategory,
+    iconCategoryHover,
+    iconBreadcrumb,
     author1,
     author2,
     author3,

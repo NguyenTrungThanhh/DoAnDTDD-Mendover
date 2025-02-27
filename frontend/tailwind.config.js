@@ -6,6 +6,9 @@ export default {
             colors: {
                 primary: '#bda87f',
             },
+            fontFamily: {
+                asap: ['Asap', 'HelveticaNeue', 'Helvetica Neue', 'sans-serif'],
+            },
         },
     },
     plugins: [],

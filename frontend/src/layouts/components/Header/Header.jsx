@@ -2,27 +2,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { assets } from '@/assets/assets';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faArrowDown, faCartShopping, faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons';
+import config from '@/configs';
 
 function Header() {
     return (
         <div className="flex justify-center items-center gap-32 h-32">
-            <div>
-                <img src={assets.logo} alt="" />
-            </div>
+            <Link to={config.routes.home}>
+                <div>
+                    <img src={assets.logo} alt="" />
+                </div>
+            </Link>
             <div className="flex justify-center items-center gap-8 text-sm uppercase font-bold tracking-widest relative z-20">
                 <div>
-                    <Link>
+                    <Link to={config.routes.home}>
                         <h1 className="hover:text-primary py-5">Trang chủ</h1>
                     </Link>
                 </div>
                 <div>
-                    <Link>
+                    <Link to={config.routes.GioiThieu}>
                         <h1 className="hover:text-primary py-5">Giới thiệu</h1>
                     </Link>
                 </div>
                 <div className="relative group">
-                    <Link>
+                    <Link to={config.routes.SanPham}>
                         <div className="flex items-center gap-1 hover:text-primary">
                             <h1 className="py-5">Sản phẩm</h1>
                             <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
@@ -39,12 +42,12 @@ function Header() {
                 </div>
 
                 <div>
-                    <Link>
+                    <Link to={config.routes.TinTuc}>
                         <h1 className="hover:text-primary py-5">Tin tức</h1>
                     </Link>
                 </div>
                 <div>
-                    <Link>
+                    <Link to={config.routes.LienHe}>
                         <h1 className="hover:text-primary py-5">Liên hệ</h1>
                     </Link>
                 </div>
