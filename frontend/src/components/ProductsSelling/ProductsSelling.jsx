@@ -12,14 +12,13 @@ function ProductsSelling() {
             </div>
             <div className="grid grid-cols-3 gap-6">
                 {product.map((item, index) => (
-                    <ProductItem
-                        key={index}
-                        id={item.id}
-                        slug={item.slug}
-                        image={item.image}
-                        name={item.name}
-                        price={item.price}
-                    />
+                    <div className="flex flex-col" key={index}>
+                        <img src={item.image} alt="" className="w-[370px] h-[280px]" />
+                        <div className="pt-8">
+                            <h1>{item.name}</h1>
+                            <p className="pt-3 text-[#f4304c]">{item.price}</p>
+                        </div>
+                    </div>
                 ))}
             </div>
             <div className="mt-12 flex justify-center">
