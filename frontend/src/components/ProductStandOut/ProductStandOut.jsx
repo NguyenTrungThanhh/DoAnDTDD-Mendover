@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { assets, product } from '@/assets/assets';
-import ProductItem from '@/components/ProductItem';
 
 function ProductStandOut() {
     const [canHoCaoCap, setCanHoCaoCap] = useState(true);
@@ -255,7 +254,7 @@ function ProductStandOut() {
                 </div>
                 <div className="w-[800px] mx-[15px]">
                     <div className="grid grid-cols-2 gap-6">
-                        {product.map((item, index) => (
+                        {product.slice(0, 4).map((item, index) => (
                             <div className="flex flex-col" key={index}>
                                 <img src={item.image} alt="" className="w-[370px] h-[280px]" />
                                 <div className="pt-8">

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTableCells } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronLeft, faChevronRight, faTableCells } from '@fortawesome/free-solid-svg-icons';
 import CategoryProduct from '@/components/CategoryProduct';
 import config from '@/configs';
 import { assets, product } from '@/assets/assets';
@@ -11,6 +11,7 @@ import ProductItem from '@/components/ProductItem';
 function SanPham() {
     const [cell, setCell] = useState(true);
     const [bars, setBars] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const options = [
         { value: 'default', label: 'Mặc định' },
@@ -21,6 +22,32 @@ function SanPham() {
         { value: 'date_new', label: 'Mới nhất' },
         { value: 'date_old', label: 'Cũ nhất' },
     ];
+
+    const itemsPerPage = 12;
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
+    const currentItems = product.slice(indexOfFirstItem, indexOfLastItem);
+
+    const totalPages = product?.length ? Math.ceil(product.length / itemsPerPage) : 1;
+
+    const nextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+    }
 
     const handleSortChange = (selectedOption) => {
         console.log('Sắp xếp theo:', selectedOption.value);
@@ -47,6 +74,34 @@ function SanPham() {
                 <div className="w-3/4 m-auto flex">
                     <div className="w-[300px] px-[15px] flex-shrink-0">
                         <CategoryProduct />
+                        <div className="mt-8">
+                            <h1 className="font-bold uppercase">Sản phẩm bán chạy</h1>
+                            <div>
+                                {product.slice(0, 5).map((item, index, arr) => (
+                                    <div
+                                        key={index}
+                                        className={`flex gap-3 my-8 pb-8 ${
+                                            index !== arr.length - 1 ? 'border-b-[1px]' : ''
+                                        }`}
+                                    >
+                                        <div>
+                                            <Link className="block w-20">
+                                                <img src={item.image} alt="" className="w-full h-[60px] object-cover" />
+                                            </Link>
+                                        </div>
+                                        <div>
+                                            <Link>
+                                                <h1 className="mb-[10px] hover:text-primary">{item.name}</h1>
+                                            </Link>
+                                            <p className="text-[#f4304c]">{item.price}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <img src={assets.bannerCategory} alt="" />
+                        </div>
                     </div>
                     <div className="px-[15px] flex-1">
                         <div className="flex items-center justify-between py-[15px] border-b-[1px]">
@@ -86,8 +141,8 @@ function SanPham() {
                             </div>
                         </div>
                         <div className="mt-12">
-                            <div className="grid grid-cols-3 gap-6">
-                                {product.map((item, index) => (
+                            <div className="grid grid-cols-3 gap-6 gap-y-12">
+                                {currentItems.map((item, index) => (
                                     <ProductItem
                                         key={index}
                                         id={item.id}
@@ -97,6 +152,39 @@ function SanPham() {
                                         price={item.price}
                                     />
                                 ))}
+                            </div>
+                            <div className="flex justify-center items-center mt-16">
+                                {currentPage === 1 ? null : (
+                                    <button
+                                        onClick={prevPage}
+                                        className="bg-white text-[#ccc] py-2 px-4 rounded-full hover:bg-primary hover:text-white border border-[#e5e5e5] duration-200"
+                                    >
+                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                    </button>
+                                )}
+                                <div className="flex gap-2 mx-2">
+                                    {pageNumbers.map((number) => (
+                                        <button
+                                            key={number}
+                                            onClick={() => setCurrentPage(number)}
+                                            className={`py-2 px-4 rounded-full hover:bg-primary hover:text-white duration-200 ${
+                                                currentPage === number
+                                                    ? 'bg-primary text-white'
+                                                    : 'bg-white text-[#ccc] border border-[#e5e5e5]'
+                                            }`}
+                                        >
+                                            {number}
+                                        </button>
+                                    ))}
+                                </div>
+                                {currentPage === totalPages ? null : (
+                                    <button
+                                        onClick={nextPage}
+                                        className="bg-white text-[#ccc] py-2 px-4 rounded-full hover:bg-primary hover:text-white border border-[#e5e5e5] duration-200"
+                                    >
+                                        <FontAwesomeIcon icon={faChevronRight} />
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>

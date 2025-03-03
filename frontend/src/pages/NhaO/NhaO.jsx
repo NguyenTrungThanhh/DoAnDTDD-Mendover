@@ -5,11 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronLeft, faChevronRight, faTableCells } from '@fortawesome/free-solid-svg-icons';
 import CategoryProduct from '@/components/CategoryProduct';
 import config from '@/configs';
-import { assets, news, product } from '@/assets/assets';
+import { assets, product } from '@/assets/assets';
 import ProductItem from '@/components/ProductItem';
-import CategoryNews from '@/components/CategoryNews';
 
-function SanPham() {
+function NhaO() {
     const [cell, setCell] = useState(true);
     const [bars, setBars] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +58,7 @@ function SanPham() {
             <div className="relative">
                 <img src={assets.bannerAll} alt="" className="w-full h-[250px] object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-[#ffecb1] text-[54px] italic font-asap">Tin tức</p>
+                    <p className="text-[#ffecb1] text-[54px] italic font-asap">Nhà ở</p>
                 </div>
             </div>
             <div className="bg-[#f5f5f5] py-5">
@@ -68,17 +67,17 @@ function SanPham() {
                         Trang chủ
                     </Link>
                     <img src={assets.iconBreadcrumb} alt="" />
-                    <p className="text-primary">Tin tức</p>
+                    <p className="text-primary">Nhà ở</p>
                 </div>
             </div>
             <div className="py-16">
                 <div className="w-3/4 m-auto flex">
                     <div className="w-[300px] px-[15px] flex-shrink-0">
-                        <CategoryNews />
+                        <CategoryProduct />
                         <div className="mt-8">
-                            <h1 className="font-bold uppercase">Tin mới cập nhật</h1>
+                            <h1 className="font-bold uppercase">Sản phẩm bán chạy</h1>
                             <div>
-                                {news.slice(0, 5).map((item, index, arr) => (
+                                {product.slice(0, 5).map((item, index, arr) => (
                                     <div
                                         key={index}
                                         className={`flex gap-3 my-8 pb-8 ${
@@ -86,15 +85,15 @@ function SanPham() {
                                         }`}
                                     >
                                         <div>
-                                            <Link className="block w-20">
-                                                <img src={item.imageSmall} alt="" className="w-full h-[41px]" />
+                                            <Link>
+                                                <img src={item.image} alt="" className="w-20 h-[60px]" />
                                             </Link>
                                         </div>
                                         <div>
                                             <Link>
                                                 <h1 className="mb-[10px] hover:text-primary">{item.name}</h1>
                                             </Link>
-                                            <p className="text-primary text-sm font-medium">{item.date}</p>
+                                            <p className="text-[#f4304c]">{item.price}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -195,4 +194,4 @@ function SanPham() {
     );
 }
 
-export default SanPham;
+export default NhaO;

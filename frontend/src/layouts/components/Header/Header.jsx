@@ -19,33 +19,59 @@ function Header() {
                         <h1 className="hover:text-primary py-5">Trang chủ</h1>
                     </Link>
                 </div>
+
                 <div>
                     <Link to={config.routes.GioiThieu}>
                         <h1 className="hover:text-primary py-5">Giới thiệu</h1>
                     </Link>
                 </div>
+
                 <div className="relative group">
                     <Link to={config.routes.SanPham}>
                         <div className="flex items-center gap-1 hover:text-primary">
-                            <h1 className="py-5">Sản phẩm</h1>
+                            <h1 className="py-[54px] hover:text-primary">Sản phẩm</h1>
                             <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                         </div>
                     </Link>
-                    <div className="absolute left-0 top-full min-w-[200px] bg-white shadow-lg rounded-lg hidden group-hover:block transition-all duration-200 z-10">
-                        <Link className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary hover:rounded-bl-lg hover:rounded-br-lg">
-                            Căn hộ
-                        </Link>
-                        <Link className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary hover:rounded-bl-lg hover:rounded-br-lg">
+                    <div className="absolute left-0 top-full min-w-[200px] bg-white shadow-lg hidden group-hover:block transition-all duration-200 z-10">
+                        <Link
+                            to={config.routes.NhaO}
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+                        >
                             Nhà ở
+                        </Link>
+                        <Link
+                            to={config.routes.CanHo}
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+                        >
+                            Căn hộ
                         </Link>
                     </div>
                 </div>
 
-                <div>
+                <div className="relative group">
                     <Link to={config.routes.TinTuc}>
-                        <h1 className="hover:text-primary py-5">Tin tức</h1>
+                        <div className="flex items-center gap-1 hover:text-primary">
+                            <h1 className="py-[54px]">Tin tức</h1>
+                            <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
+                        </div>
                     </Link>
+                    <div className="absolute left-0 top-full min-w-[200px] bg-white shadow-lg hidden group-hover:block transition-all duration-200 z-10">
+                        <Link
+                            to={config.routes.BatDongSan}
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+                        >
+                            Bất động sản
+                        </Link>
+                        <Link
+                            to={config.routes.TinNoiBat}
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+                        >
+                            Tin nổi bật
+                        </Link>
+                    </div>
                 </div>
+
                 <div>
                     <Link to={config.routes.LienHe}>
                         <h1 className="hover:text-primary py-5">Liên hệ</h1>

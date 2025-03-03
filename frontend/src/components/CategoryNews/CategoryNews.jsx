@@ -4,17 +4,17 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import config from '@/configs';
 import { assets } from '@/assets/assets';
 
-function CategoryProduct() {
+function CategoryNews() {
     const items = [
-        { path: config.routes.NhaO, label: 'Nhà ở' },
-        { path: config.routes.CanHo, label: 'Căn hộ' },
+        { path: config.routes.BatDongSan, label: 'Bất động sản' },
+        { path: config.routes.TinNoiBat, label: 'Tin nổi bật' },
     ];
 
     return (
         <div className="border overflow-hidden">
             <div className="flex items-center gap-4 bg-[#363533] p-4 text-white">
                 <FontAwesomeIcon icon={faBars} className="text-xl" />
-                <h3 className="font-bold uppercase">Danh mục sản phẩm</h3>
+                <h3 className="font-bold uppercase">Danh mục tin tức</h3>
             </div>
 
             <div>
@@ -56,4 +56,4 @@ function CategoryProduct() {
     );
 }
 
-export default CategoryProduct;
+export default CategoryNews;

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { assets, product } from '@/assets/assets';
-import ProductItem from '@/components/ProductItem';
 
 function ProductsSelling() {
     return (
@@ -11,7 +10,7 @@ function ProductsSelling() {
                 <img src={assets.iconName} alt="" />
             </div>
             <div className="grid grid-cols-3 gap-6">
-                {product.map((item, index) => (
+                {product.slice(0, 6).map((item, index) => (
                     <div className="flex flex-col" key={index}>
                         <img src={item.image} alt="" className="w-[370px] h-[280px]" />
                         <div className="pt-8">
