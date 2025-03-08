@@ -6,7 +6,7 @@ import { faBars, faChevronLeft, faChevronRight, faTableCells } from '@fortawesom
 import CategoryProduct from '@/components/CategoryProduct';
 import config from '@/configs';
 import { assets, product } from '@/assets/assets';
-import ProductItem from '@/components/ProductItem';
+import NhaOItem from '@/components/NhaOItem';
 
 function NhaO() {
     const [cell, setCell] = useState(true);
@@ -143,7 +143,7 @@ function NhaO() {
                         <div className="mt-12">
                             <div className="grid grid-cols-3 gap-6 gap-y-12">
                                 {currentItems.map((item, index) => (
-                                    <ProductItem
+                                    <NhaOItem
                                         key={index}
                                         id={item.id}
                                         slug={item.slug}

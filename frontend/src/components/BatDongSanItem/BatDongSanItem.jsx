@@ -1,4 +1,4 @@
-function ProductItem(props) {
+function BatDongSanItem(props) {
     return (
         <>
             <div className="flex flex-col">
@@ -12,4 +12,4 @@ function ProductItem(props) {
     );
 }
 
-export default ProductItem;
+export default BatDongSanItem;

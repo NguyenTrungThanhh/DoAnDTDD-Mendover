@@ -1,37 +1,23 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChevronLeft, faChevronRight, faTableCells } from '@fortawesome/free-solid-svg-icons';
-import CategoryProduct from '@/components/CategoryProduct';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import config from '@/configs';
-import { assets, product } from '@/assets/assets';
-import ProductItem from '@/components/ProductItem';
+import { assets, news } from '@/assets/assets';
 import CategoryNews from '@/components/CategoryNews';
+import NewsItem from '@/components/NewsItem';
 
 function TinNoiBat() {
-    const [cell, setCell] = useState(true);
-    const [bars, setBars] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const options = [
-        { value: 'default', label: 'Mặc định' },
-        { value: 'price_asc', label: 'Giá thấp đến cao' },
-        { value: 'price_desc', label: 'Giá cao đến thấp' },
-        { value: 'name_asc', label: 'Tên A-Z' },
-        { value: 'name_desc', label: 'Tên Z-A' },
-        { value: 'date_new', label: 'Mới nhất' },
-        { value: 'date_old', label: 'Cũ nhất' },
-    ];
-
-    const itemsPerPage = 12;
+    const itemsPerPage = 5;
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-    const currentItems = product.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = news.slice(indexOfFirstItem, indexOfLastItem);
 
-    const totalPages = product?.length ? Math.ceil(product.length / itemsPerPage) : 1;
+    const totalPages = news?.length ? Math.ceil(news.length / itemsPerPage) : 1;
 
     const nextPage = () => {
         if (currentPage < totalPages) {
@@ -49,10 +35,6 @@ function TinNoiBat() {
     for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
     }
-
-    const handleSortChange = (selectedOption) => {
-        console.log('Sắp xếp theo:', selectedOption.value);
-    };
 
     return (
         <div>
@@ -76,9 +58,9 @@ function TinNoiBat() {
                     <div className="w-[300px] px-[15px] flex-shrink-0">
                         <CategoryNews />
                         <div className="mt-8">
-                            <h1 className="font-bold uppercase">Sản phẩm bán chạy</h1>
+                            <h1 className="font-bold uppercase">Tin mới cập nhật</h1>
                             <div>
-                                {product.slice(0, 5).map((item, index, arr) => (
+                                {news.slice(0, 5).map((item, index, arr) => (
                                     <div
                                         key={index}
                                         className={`flex gap-3 my-8 pb-8 ${
@@ -86,74 +68,41 @@ function TinNoiBat() {
                                         }`}
                                     >
                                         <div>
-                                            <Link>
-                                                <img src={item.image} alt="" className="w-20 h-[60px]" />
+                                            <Link className="block w-20">
+                                                <img src={item.imageSmall} alt="" className="w-full h-[41px]" />
                                             </Link>
                                         </div>
                                         <div>
                                             <Link>
-                                                <h1 className="mb-[10px] hover:text-primary">{item.name}</h1>
+                                                <h1 className="mb-[10px] hover:text-primary">{item.title}</h1>
                                             </Link>
-                                            <p className="text-[#f4304c]">{item.price}</p>
+                                            <p className="text-primary text-sm font-medium">{item.date}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div>
-                            <img src={assets.bannerCategory} alt="" />
-                        </div>
                     </div>
                     <div className="px-[15px] flex-1">
-                        <div className="flex items-center justify-between py-[15px] border-b-[1px]">
-                            <div className="flex items-center gap-2">
-                                <p className="whitespace-nowrap">Sắp xếp:</p>
-                                <Select
-                                    options={options}
-                                    defaultValue={options[0]}
-                                    onChange={handleSortChange}
-                                    placeholder="Chọn kiểu sắp xếp"
-                                    className="w-64"
-                                />
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div
-                                    className={`${
-                                        cell ? 'border-primary text-primary' : ''
-                                    } w-9 h-9 border-[1px] flex items-center justify-center cursor-pointer`}
-                                    onClick={() => {
-                                        setCell(true);
-                                        setBars(false);
-                                    }}
-                                >
-                                    <FontAwesomeIcon icon={faTableCells} size="lg" />
-                                </div>
-                                <div
-                                    className={`${
-                                        bars ? 'border-primary text-primary' : ''
-                                    } w-9 h-9 border-[1px] flex items-center justify-center cursor-pointer`}
-                                    onClick={() => {
-                                        setBars(true);
-                                        setCell(false);
-                                    }}
-                                >
-                                    <FontAwesomeIcon icon={faBars} size="lg" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mt-12">
-                            <div className="grid grid-cols-3 gap-6 gap-y-12">
+                        <div>
+                            <div className="flex flex-col gap-10">
                                 {currentItems.map((item, index) => (
-                                    <ProductItem
+                                    <div
                                         key={index}
-                                        id={item.id}
-                                        slug={item.slug}
-                                        image={item.image}
-                                        name={item.name}
-                                        price={item.price}
-                                    />
+                                        className={`pb-8 ${index !== currentItems.length - 1 ? 'border-b' : ''}`}
+                                    >
+                                        <NewsItem
+                                            id={item.id}
+                                            slug={item.slug}
+                                            imageBig={item.imageBig}
+                                            title={item.title}
+                                            date={item.date}
+                                            desc={item.desc}
+                                        />
+                                    </div>
                                 ))}
                             </div>
+
                             <div className="flex justify-center items-center mt-16">
                                 {currentPage === 1 ? null : (
                                     <button

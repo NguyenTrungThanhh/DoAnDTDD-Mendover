@@ -11,6 +11,7 @@ const NhaO = lazy(() => import('@/pages/NhaO'));
 const CanHo = lazy(() => import('@/pages/CanHo'));
 const BatDongSan = lazy(() => import('@/pages/BatDongSan'));
 const TinNoiBat = lazy(() => import('@/pages/TinNoiBat'));
+const DisplayNhaO = lazy(() => import('@/components/DisplayNhaO'));
 
 // Lazy load Admin pages
 
@@ -29,9 +30,10 @@ const publicRoutes = [
     { path: config.routes.BatDongSan, component: BatDongSan },
     { path: config.routes.TinNoiBat, component: TinNoiBat },
 
-    // Admin Pages
-
     // Display Pages
+    { path: config.routes.NhaO + '/:slug', component: DisplayNhaO },
+
+    // Admin Pages
 ];
 
 const privateRoutes = [];

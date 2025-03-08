@@ -321,7 +321,7 @@ export const product = [
 export const news = [
     {
         id: 1,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -330,7 +330,7 @@ export const news = [
     },
     {
         id: 22,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -339,7 +339,7 @@ export const news = [
     },
     {
         id: 3,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -348,7 +348,7 @@ export const news = [
     },
     {
         id: 4,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -357,7 +357,7 @@ export const news = [
     },
     {
         id: 5,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -366,7 +366,7 @@ export const news = [
     },
     {
         id: 6,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -375,7 +375,7 @@ export const news = [
     },
     {
         id: 7,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -384,7 +384,7 @@ export const news = [
     },
     {
         id: 8,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -393,7 +393,7 @@ export const news = [
     },
     {
         id: 9,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -402,7 +402,7 @@ export const news = [
     },
     {
         id: 10,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
@@ -411,7 +411,7 @@ export const news = [
     },
     {
         id: 11,
-        name: 'Nội thất căn hộ với những màu sắc tương phản',
+        title: 'Nội thất căn hộ với những màu sắc tương phản',
         slug: 'noi-that-can-ho-voi-nhung-mau-sac-tuong-phan',
         date: '24/03/2016',
         imageBig: newsBig,
