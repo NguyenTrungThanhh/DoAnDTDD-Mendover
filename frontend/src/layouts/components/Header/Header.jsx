@@ -16,19 +16,39 @@ function Header() {
             <div className="flex justify-center items-center gap-8 text-sm uppercase font-bold tracking-widest relative z-20">
                 <div>
                     <Link to={config.routes.home}>
-                        <h1 className="hover:text-primary py-5">Trang chủ</h1>
+                        <h1
+                            className={`hover:text-primary py-5 ${
+                                location.pathname === config.routes.home ? 'text-primary' : ''
+                            }`}
+                        >
+                            Trang chủ
+                        </h1>
                     </Link>
                 </div>
 
                 <div>
                     <Link to={config.routes.GioiThieu}>
-                        <h1 className="hover:text-primary py-5">Giới thiệu</h1>
+                        <h1
+                            className={`hover:text-primary py-5 ${
+                                location.pathname === config.routes.GioiThieu ? 'text-primary' : ''
+                            }`}
+                        >
+                            Giới thiệu
+                        </h1>
                     </Link>
                 </div>
 
                 <div className="relative group">
                     <Link to={config.routes.SanPham}>
-                        <div className="flex items-center gap-1 hover:text-primary">
+                        <div
+                            className={`flex items-center gap-1 hover:text-primary ${
+                                [config.routes.SanPham, config.routes.NhaO, config.routes.CanHo].includes(
+                                    location.pathname,
+                                )
+                                    ? 'text-primary'
+                                    : ''
+                            }`}
+                        >
                             <h1 className="py-[54px] hover:text-primary">Sản phẩm</h1>
                             <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                         </div>
@@ -51,7 +71,15 @@ function Header() {
 
                 <div className="relative group">
                     <Link to={config.routes.TinTuc}>
-                        <div className="flex items-center gap-1 hover:text-primary">
+                        <div
+                            className={`flex items-center gap-1 hover:text-primary ${
+                                [config.routes.TinTuc, config.routes.BatDongSan, config.routes.TinNoiBat].includes(
+                                    location.pathname,
+                                )
+                                    ? 'text-primary'
+                                    : ''
+                            }`}
+                        >
                             <h1 className="py-[54px]">Tin tức</h1>
                             <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                         </div>

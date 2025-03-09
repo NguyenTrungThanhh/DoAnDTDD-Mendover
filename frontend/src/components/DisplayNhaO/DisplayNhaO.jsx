@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
-import { assets } from '@/assets/assets';
+import { assets, product } from '@/assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faChevronDown, faChevronUp, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ function DisplayNhaO() {
     const images = [assets.CanHo2PN, assets.CanHo2PN];
 
     return (
-        <div>
+        <div className="mb-32">
             <div className="relative">
                 <img src={assets.bannerAll} alt="" className="w-full h-[250px] object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -159,21 +159,21 @@ function DisplayNhaO() {
                 </div>
             </div>
             <div className="w-3/4 mx-auto mt-16">
-                <div className="flex">
+                <div className="flex items-center border-b">
                     <div
-                        className="px-7 py-6 cursor-pointer mr-6"
+                        className={`${info ? 'border-b-4 border-primary' : ''} px-7 py-6 cursor-pointer mr-6`}
                         onClick={() => {
                             setInfo(true);
                             setIntroduce(false);
                             setRank(false);
                         }}
                     >
-                        <h1 className={`${info ? 'text-primary ' : ''} text-black text-[17px] uppercase font-medium`}>
+                        <h1 className={`${info ? 'text-primary' : ''} text-black text-[17px] uppercase font-medium`}>
                             Thông tin sản phẩm
                         </h1>
                     </div>
                     <div
-                        className="px-7 py-6 cursor-pointer mr-6"
+                        className={`${introduce ? 'border-b-4 border-primary' : ''} px-7 py-6 cursor-pointer mr-6`}
                         onClick={() => {
                             setInfo(false);
                             setIntroduce(true);
@@ -189,7 +189,7 @@ function DisplayNhaO() {
                         </h1>
                     </div>
                     <div
-                        className="px-7 py-6 cursor-pointer mr-6"
+                        className={`${rank ? 'border-b-4 border-primary' : ''} px-7 py-6 cursor-pointer mr-6`}
                         onClick={() => {
                             setInfo(false);
                             setIntroduce(false);
@@ -201,7 +201,48 @@ function DisplayNhaO() {
                         </h1>
                     </div>
                 </div>
-                <div></div>
+                <div>
+                    {info &&
+                        product.slice(0, 1).map((item, index) => (
+                            <div key={index} className="border mt-8 p-6">
+                                <img src={item.image} alt={item.name} className="mt-4 w-full h-auto" />
+                                {item.info.map((infoItem, i) => (
+                                    <p key={i}>{infoItem}</p>
+                                ))}
+                            </div>
+                        ))}
+
+                    {introduce && (
+                        <>
+                            <div className="border mt-8 p-6">Thông tin đang được cập nhật</div>
+                        </>
+                    )}
+                    {rank && (
+                        <>
+                            <div className="border mt-8 p-6">Thông tin đang được cập nhật</div>
+                        </>
+                    )}
+                </div>
+                <div className="flex justify-center items-center gap-10 mb-8 mt-16">
+                    <img src={assets.iconName} alt="" />
+                    <h1 className="text-[25px] font-bold uppercase">Sản phẩm liên quan</h1>
+                    <img src={assets.iconName} alt="" />
+                </div>
+                <div>
+                    <Swiper modules={[Navigation, Pagination]} slidesPerView={4} spaceBetween={10} className="">
+                        {product.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="flex flex-col">
+                                    <img src={item.image} alt="" className="w-[270px] h-[204px]" />
+                                    <div className="pt-4">
+                                        <h1>{item.name}</h1>
+                                        <p className="pt-3 text-[#f4304c]">{item.price}</p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
         </div>
     );

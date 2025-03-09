@@ -3,12 +3,10 @@ import { ClipLoader } from 'react-spinners';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DefaultLayout from '@/layouts/DefaultLayout';
 import { publicRoutes } from '@/routes';
-import ScrollToTop from '@/components/ScrollToTop';
 
 function App() {
     return (
         <Router>
-            <ScrollToTop />
             <Routes>
                 {publicRoutes.map((route, index) => {
                     const Page = route.component;

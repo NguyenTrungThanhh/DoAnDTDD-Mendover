@@ -1,11 +1,45 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLocationDot, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp, faEnvelope, faLocationDot, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import { assets } from '@/assets/assets';
+import { useEffect, useState } from 'react';
 
 function Footer() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <div className="w-full">
+            <div
+                className="fixed bottom-5 right-5 w-10 h-10 bg-primary text-white text-[18px] rounded-md hover:opacity-80 duration-200"
+                style={{ display: isVisible ? 'block' : 'none' }}
+                onClick={scrollToTop}
+            >
+                <button className="w-full h-full">
+                    <FontAwesomeIcon icon={faArrowUp} />
+                </button>
+            </div>
             <div className="w-full bg-[#252525] py-[60px]">
                 <div className="flex gap-32 max-w-[1200px] m-auto">
                     <div>

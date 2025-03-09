@@ -105,6 +105,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 2,
@@ -112,6 +119,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 3,
@@ -119,6 +133,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 4,
@@ -126,6 +147,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 5,
@@ -133,6 +161,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -140,6 +175,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 1,
@@ -147,6 +189,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 2,
@@ -154,6 +203,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 3,
@@ -161,6 +217,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 4,
@@ -168,6 +231,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 5,
@@ -175,6 +245,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -182,6 +259,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 1,
@@ -189,6 +273,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 2,
@@ -196,6 +287,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 3,
@@ -203,6 +301,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 4,
@@ -210,6 +315,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 5,
@@ -217,6 +329,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -224,6 +343,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 1,
@@ -231,6 +357,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 2,
@@ -238,6 +371,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 3,
@@ -245,6 +385,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 4,
@@ -252,6 +399,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 5,
@@ -259,6 +413,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -266,6 +427,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -273,6 +441,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 1,
@@ -280,6 +455,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 2,
@@ -287,6 +469,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 3,
@@ -294,6 +483,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 4,
@@ -301,6 +497,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 5,
@@ -308,6 +511,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
     {
         id: 6,
@@ -315,6 +525,13 @@ export const product = [
         slug: 'can-ho-2PN-tai-Pearl-Plaza',
         price: '250.000.000₫',
         image: CanHo2PN,
+        info: [
+            'Diện tích: 101m²',
+            'Tầng: 15',
+            'Giá bán: 4 tỷ VNĐ',
+            'Nội thất: nhà trống',
+            'Tiện ích: Hồ bơi, Gym, Công viên',
+        ],
     },
 ];
 
