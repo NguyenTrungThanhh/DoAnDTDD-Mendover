@@ -1,15 +1,27 @@
-const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const cloudinary = require('../configs/cloudinary'); // Import đối tượng đã config
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET_KEY,
+});
 
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
-    params: {
-        folder: 'uploads',
-        allowed_formats: ['jpg', 'png', 'jpeg'],
+    params: async (req, file) => {
+        const folderName = 'default';
+        return {
+            folder: folderName,
+            allowed_formats: ['jpg', 'png', 'jpeg', 'webp'],
+        };
     },
 });
 
-const upload = multer({ storage });
+const upload = multer({
+    storage,
+    limits: { fileSize: 2 * 1024 * 1024 },
+});
 
 module.exports = upload;

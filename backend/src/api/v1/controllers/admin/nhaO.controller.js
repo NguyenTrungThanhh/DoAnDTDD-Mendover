@@ -1,3 +1,5 @@
+const cloudinary = require('cloudinary').v2;
+
 const { GetAllNhaO, AddNhaO, DeleteNhaO } = require('../../../../../src/api/v1/services/nhaO.service');
 
 const handlerGetAllNhaO = async (req, res) => {
@@ -11,23 +13,28 @@ const handlerGetAllNhaO = async (req, res) => {
 
 const handlerAddNhaO = async (req, res) => {
     try {
-        const { name, price, desc } = req.body;
+        console.log('Body nhận được:', req.body);
+        console.log('Files nhận được:', req.files);
 
-        const imageMain = req.files['imageMain'] ? req.files['imageMain'][0].path : null;
-        const imageSub = req.files['imageSub'] ? req.files['imageSub'][0].path : null;
+        const { name, price } = req.body;
+        const desc = req.body.desc ? JSON.parse(req.body.desc) : [];
+
+        // Lấy link ảnh đã upload lên Cloudinary từ multer
+        const imageMainUrl = req.files['imageMain'][0].path;
+        const imageSubUrl = req.files['imageSub'][0].path;
 
         const nhaOData = {
             name,
             price,
             desc,
-            imageMain,
-            imageSub,
+            imageMain: imageMainUrl,
+            imageSub: imageSubUrl,
         };
 
-        await AddProduct(nhaOData);
-
-        res.json({ success: true, message: 'Thêm sản phẩm thành công', product: nhaOData });
+        const newNhaO = await AddNhaO(nhaOData);
+        res.json({ success: true, message: 'Thêm sản phẩm thành công', product: newNhaO });
     } catch (error) {
+        console.error('Lỗi backend:', error);
         res.status(500).json({ success: false, message: error.message });
     }
 };

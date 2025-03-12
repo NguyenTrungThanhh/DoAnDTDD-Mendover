@@ -4,7 +4,7 @@ const slugify = require('slugify');
 const NhaOSchema = mongoose.Schema(
     {
         name: { type: String, required: true },
-        price: { type: Number, required: true },
+        price: { type: String, required: true },
         desc: { type: [String], required: true },
         imageMain: { type: String, required: true },
         imageSub: { type: String, required: true },
@@ -21,6 +21,6 @@ NhaOSchema.pre('save', function (next) {
         });
     }
     next();
-});s
+});
 
 module.exports = mongoose.model('NhaO', NhaOSchema);

@@ -10,7 +10,14 @@ const {
 
 router.get('/', handlerGetAllNhaO);
 
-router.post('/add', upload.fields([{ name: 'imageMain' }, { name: 'imageSub' }]), handlerAddNhaO);
+router.post(
+    '/add',
+    upload.fields([
+        { name: 'imageMain', maxCount: 1 },
+        { name: 'imageSub', maxCount: 1 },
+    ]),
+    handlerAddNhaO,
+);
 
 router.delete('/delete/:id', handlerDeleteNhaO);
 
