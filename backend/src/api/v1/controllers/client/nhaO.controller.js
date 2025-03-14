@@ -1,4 +1,4 @@
-const { GetAllNhaO, AddNhaO, DeleteNhaO } = require('../../../../../src/api/v1/services/nhaO.service');
+const { GetAllNhaO, GetNhaOBySlug } = require('../../../../../src/api/v1/services/nhaO.service');
 
 const handlerGetAllNhaO = async (req, res) => {
     try {

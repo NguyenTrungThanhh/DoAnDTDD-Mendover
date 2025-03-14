@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronLeft, faChevronRight, faTableCells } from '@fortawesome/free-solid-svg-icons';
 import CategoryProduct from '@/components/CategoryProduct';
 import config from '@/configs';
-import { assets, product } from '@/assets/assets';
-import NhaOItem from '@/components/NhaOItem';
+import { assets } from '@/assets/assets';
+import { MendoverContext } from '@/context/MendoverContext';
+import CanHoItem from '@/components/CanHoItem';
 
 function CanHo() {
+    const { canHoData } = useContext(MendoverContext);
     const [cell, setCell] = useState(true);
     const [bars, setBars] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -28,9 +30,9 @@ function CanHo() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-    const currentItems = product.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = canHoData.slice(indexOfFirstItem, indexOfLastItem);
 
-    const totalPages = product?.length ? Math.ceil(product.length / itemsPerPage) : 1;
+    const totalPages = canHoData?.length ? Math.ceil(canHoData.length / itemsPerPage) : 1;
 
     const nextPage = () => {
         if (currentPage < totalPages) {
@@ -77,7 +79,7 @@ function CanHo() {
                         <div className="mt-8">
                             <h1 className="font-bold uppercase">Sản phẩm bán chạy</h1>
                             <div>
-                                {product.slice(0, 5).map((item, index, arr) => (
+                                {canHoData.slice(0, 5).map((item, index, arr) => (
                                     <div
                                         key={index}
                                         className={`flex gap-3 my-8 pb-8 ${
@@ -85,12 +87,12 @@ function CanHo() {
                                         }`}
                                     >
                                         <div>
-                                            <Link>
-                                                <img src={item.image} alt="" className="w-20 h-[60px]" />
+                                            <Link to={config.routes.CanHo + `/${item.slug}`}>
+                                                <img src={item.imageMain} alt="" className="w-20 h-[60px]" />
                                             </Link>
                                         </div>
                                         <div>
-                                            <Link>
+                                            <Link to={config.routes.CanHo + `/${item.slug}`}>
                                                 <h1 className="mb-[10px] hover:text-primary">{item.name}</h1>
                                             </Link>
                                             <p className="text-[#f4304c]">{item.price}</p>
@@ -143,11 +145,11 @@ function CanHo() {
                         <div className="mt-12">
                             <div className="grid grid-cols-3 gap-6 gap-y-12">
                                 {currentItems.map((item, index) => (
-                                    <NhaOItem
+                                    <CanHoItem
                                         key={index}
                                         id={item.id}
                                         slug={item.slug}
-                                        image={item.image}
+                                        imageMain={item.imageMain}
                                         name={item.name}
                                         price={item.price}
                                     />

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { assets } from '@/assets/assets';
 import { toast } from 'react-toastify';
 
-function AddNhaO() {
+function AddCanHo() {
     const [imageMain, setImageMain] = useState(false);
     const [imageSub, setImageSub] = useState(false);
     const [name, setName] = useState('');
@@ -12,7 +12,7 @@ function AddNhaO() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        document.title = 'Mendover | Thêm nhà ở';
+        document.title = 'Mendover | Thêm căn hộ';
     }, []);
 
     const handleSubmit = async (e) => {
@@ -27,10 +27,10 @@ function AddNhaO() {
             formData.append('imageMain', imageMain);
             formData.append('imageSub', imageSub);
 
-            const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/v1/admin/NhaO/add`, formData);
+            const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/v1/admin/CanHo/add`, formData);
 
             if (response.data.success) {
-                toast.success('Thêm nhà ở thành công');
+                toast.success('Thêm căn hộ thành công');
                 setName('');
                 setPrice('');
                 setDesc('');
@@ -95,7 +95,7 @@ function AddNhaO() {
             </div>
 
             <div className="flex flex-col gap-2.5 w-2/4">
-                <p>Tên nhà ở</p>
+                <p>Tên căn hộ</p>
                 <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -133,4 +133,4 @@ function AddNhaO() {
     );
 }
 
-export default AddNhaO;
+export default AddCanHo;

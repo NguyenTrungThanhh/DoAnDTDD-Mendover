@@ -2,33 +2,33 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-function ListNhaO() {
+function ListCanHo() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        document.title = 'Mendover | Danh sách nhà ở';
+        document.title = 'Mendover | Danh sách căn hộ';
     }, []);
 
     const fetchNhaO = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/v1/admin/NhaO`);
+            const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/v1/admin/CanHo`);
             if (response.data.success) {
                 setData(response.data.products);
             }
         } catch (error) {
-            toast.error('Lỗi call API Nhà Ở');
+            toast.error('Lỗi call API Căn Hộ');
         }
     };
 
     const deleteSong = async (id) => {
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_URL_API}/api/v1/admin/NhaO/delete/${id}`);
+            const response = await axios.delete(`${import.meta.env.VITE_URL_API}/api/v1/admin/CanHo/delete/${id}`);
             if (response.data.success) {
-                toast.success('Xóa Nhà Ở thành công');
+                toast.success('Xóa Căn Hộ thành công');
                 fetchNhaO();
             }
         } catch (error) {
-            toast.error('Xóa Nhà Ở thất bại');
+            toast.error('Xóa Căn Hộ thất bại');
         }
     };
 
@@ -38,7 +38,7 @@ function ListNhaO() {
 
     return (
         <div className="pt-8 pl-5 sm:pt-12 sm:pl-12">
-            <p>Danh sách Nhà Ở</p>
+            <p>Danh sách Căn Hộ</p>
             <br />
             <div>
                 <div className="sm:grid hidden grid-cols-5 items-center gap-2.5 p-3 border border-gray-300 text-sm mr-5 bg-gray-100">
@@ -69,4 +69,4 @@ function ListNhaO() {
     );
 }
 
-export default ListNhaO;
+export default ListCanHo;

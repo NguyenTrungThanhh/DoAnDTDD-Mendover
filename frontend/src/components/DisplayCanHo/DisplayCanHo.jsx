@@ -15,9 +15,9 @@ import { faFacebookF, faGooglePlusG, faTwitter } from '@fortawesome/free-brands-
 import axios from 'axios';
 import { MendoverContext } from '@/context/MendoverContext';
 
-function DisplayNhaO() {
+function DisplayCanHo() {
     const { slug } = useParams();
-    const { nhaOData } = useContext(MendoverContext);
+    const { canHoData } = useContext(MendoverContext);
 
     const [data, setData] = useState('');
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -38,9 +38,9 @@ function DisplayNhaO() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/client/nhaO/${slug}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/client/canHo/${slug}`);
             if (response.data.success) {
-                setData(response.data.nhaO);
+                setData(response.data.canHo);
             }
         } catch (error) {
             toast.error('Lỗi khi lấy dữ liệu sản phẩm');
@@ -67,8 +67,8 @@ function DisplayNhaO() {
                                 Trang chủ
                             </Link>
                             <img src={assets.iconBreadcrumb} alt="" />
-                            <Link to={config.routes.NhaO} className="hover:underline">
-                                Nhà ở
+                            <Link to={config.routes.CanHo} className="hover:underline">
+                                Căn hộ
                             </Link>
                             <img src={assets.iconBreadcrumb} alt="" />
                             <p className="text-primary">{data.name}</p>
@@ -276,14 +276,14 @@ function DisplayNhaO() {
                         </div>
                         <div>
                             <Swiper modules={[Navigation, Pagination]} slidesPerView={4} spaceBetween={10} className="">
-                                {nhaOData.map((item, index) => (
+                                {canHoData.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <div className="flex flex-col">
-                                            <Link to={config.routes.NhaO + `/${item.slug}`}>
+                                            <Link to={config.routes.CanHo + `/${item.slug}`}>
                                                 <img src={item.imageMain} alt="" className="w-[270px] h-[204px]" />
                                             </Link>
                                             <div className="pt-4">
-                                                <Link to={config.routes.NhaO + `/${item.slug}`}>
+                                                <Link to={config.routes.CanHo + `/${item.slug}`}>
                                                     <h1 className="hover:text-primary">{item.name}</h1>
                                                 </Link>
                                                 <p className="pt-3 text-[#f4304c]">{item.price}</p>
@@ -300,4 +300,4 @@ function DisplayNhaO() {
     );
 }
 
-export default DisplayNhaO;
+export default DisplayCanHo;

@@ -8,6 +8,6 @@ const {
 
 router.get('/', handlerGetAllNhaO);
 
-router.get('/slug', handlerGetNhaOBySlug);
+router.get('/:slug', handlerGetNhaOBySlug);
 
 module.exports = router;

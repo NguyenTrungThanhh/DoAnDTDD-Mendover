@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 
-const NhaOSchema = mongoose.Schema(
+const CanHoSchema = mongoose.Schema(
     {
         name: { type: String, required: true },
         slug: { type: String, unique: true, index: true },
@@ -13,7 +13,7 @@ const NhaOSchema = mongoose.Schema(
     { timestamps: true },
 );
 
-NhaOSchema.pre('save', function (next) {
+CanHoSchema.pre('save', function (next) {
     if (!this.slug || this.isModified('name')) {
         this.slug = slugify(this.name, {
             lower: true,
@@ -24,4 +24,4 @@ NhaOSchema.pre('save', function (next) {
     next();
 });
 
-module.exports = mongoose.model('NhaO', NhaOSchema);
+module.exports = mongoose.model('CanHo', CanHoSchema);

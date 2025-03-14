@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import config from '@/configs';
 
-function NhaOItem(props) {
+function CanHoItem(props) {
     return (
         <>
             <div className="flex flex-col">
-                <Link to={config.routes.NhaO + `/${props.slug}`}>
+                <Link to={config.routes.CanHo + `/${props.slug}`}>
                     <img src={props.imageMain} alt="" className="w-[270px] h-[204px]" />
                 </Link>
                 <div className="pt-8">
@@ -17,4 +17,4 @@ function NhaOItem(props) {
     );
 }
 
-export default NhaOItem;
+export default CanHoItem;

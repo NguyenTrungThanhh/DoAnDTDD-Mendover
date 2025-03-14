@@ -12,7 +12,7 @@ connectDatabase();
 
 app.use(
     cors({
-        origin: process.env.FRONTEND_URL,
+        origin: true,
         methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'],
         allowedHeaders: ['Content-Type', 'Authorization', 'auth-token'],
         credentials: true,

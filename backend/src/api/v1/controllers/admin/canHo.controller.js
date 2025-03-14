@@ -1,15 +1,15 @@
-const { GetAllNhaO, AddNhaO, DeleteNhaO } = require('../../../../../src/api/v1/services/nhaO.service');
+const { GetAllCanHo, AddCanHo, DeleteCanHo } = require('../../../../../src/api/v1/services/canHo.service');
 
-const handlerGetAllNhaO = async (req, res) => {
+const handlerGetAllCanHo = async (req, res) => {
     try {
-        const allNhaO = await GetAllNhaO();
-        res.json({ success: true, products: allNhaO });
+        const allCanHo = await GetAllCanHo();
+        res.json({ success: true, products: allCanHo });
     } catch (error) {
         res.json({ success: false, message: error.message });
     }
 };
 
-const handlerAddNhaO = async (req, res) => {
+const handlerAddCanHo = async (req, res) => {
     try {
         console.log('Body nhận được:', req.body);
         console.log('Files nhận được:', req.files);
@@ -21,7 +21,7 @@ const handlerAddNhaO = async (req, res) => {
         const imageMainUrl = req.files['imageMain'][0].path;
         const imageSubUrl = req.files['imageSub'][0].path;
 
-        const nhaOData = {
+        const canHoData = {
             name,
             price,
             desc,
@@ -29,18 +29,18 @@ const handlerAddNhaO = async (req, res) => {
             imageSub: imageSubUrl,
         };
 
-        const newNhaO = await AddNhaO(nhaOData);
-        res.json({ success: true, message: 'Thêm sản phẩm thành công', product: newNhaO });
+        const newCanHo = await AddCanHo(canHoData);
+        res.json({ success: true, message: 'Thêm sản phẩm thành công', product: newCanHo });
     } catch (error) {
         console.error('Lỗi backend:', error);
         res.status(500).json({ success: false, message: error.message });
     }
 };
 
-const handlerDeleteNhaO = async (req, res) => {
+const handlerDeleteCanHo = async (req, res) => {
     const { id } = req.params;
     try {
-        await DeleteNhaO(id);
+        await DeleteCanHo(id);
         res.json({ success: true, message: 'Xóa sản phẩm thành công' });
     } catch (error) {
         res.json({ success: false, message: error.message });
@@ -48,7 +48,7 @@ const handlerDeleteNhaO = async (req, res) => {
 };
 
 module.exports = {
-    handlerGetAllNhaO,
-    handlerAddNhaO,
-    handlerDeleteNhaO,
+    handlerGetAllCanHo,
+    handlerAddCanHo,
+    handlerDeleteCanHo,
 };
