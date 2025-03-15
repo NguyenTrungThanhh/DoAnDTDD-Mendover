@@ -20,7 +20,7 @@ function ListNhaO() {
         }
     };
 
-    const deleteSong = async (id) => {
+    const deleteNhaO = async (id) => {
         try {
             const response = await axios.delete(`${import.meta.env.VITE_URL_API}/api/v1/admin/NhaO/delete/${id}`);
             if (response.data.success) {
@@ -58,7 +58,7 @@ function ListNhaO() {
                             <p className="m-auto line-clamp-2">{item.name}</p>
                             <p className="m-auto line-clamp-2">{item.price}</p>
                             <p className="m-auto line-clamp-2">{item.desc}</p>
-                            <p onClick={() => deleteSong(item._id)} className="m-auto cursor-pointer">
+                            <p onClick={() => deleteNhaO(item._id)} className="m-auto cursor-pointer">
                                 x
                             </p>
                         </div>

@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { assets, product } from '@/assets/assets';
+import { assets } from '@/assets/assets';
+import { useContext } from 'react';
+import { MendoverContext } from '@/context/MendoverContext';
 
 function ProductsSelling() {
+    const { combinedData } = useContext(MendoverContext);
+
     return (
         <div className="m-auto w-3/4 mt-16">
             <div className="flex justify-center items-center gap-10 mb-8">
@@ -10,9 +14,9 @@ function ProductsSelling() {
                 <img src={assets.iconName} alt="" />
             </div>
             <div className="grid grid-cols-3 gap-6">
-                {product.slice(0, 6).map((item, index) => (
+                {combinedData.slice(0, 6).map((item, index) => (
                     <div className="flex flex-col" key={index}>
-                        <img src={item.image} alt="" className="w-[370px] h-[280px]" />
+                        <img src={item.imageMain} alt="" className="w-[370px] h-[280px]" />
                         <div className="pt-8">
                             <h1>{item.name}</h1>
                             <p className="pt-3 text-[#f4304c]">{item.price}</p>

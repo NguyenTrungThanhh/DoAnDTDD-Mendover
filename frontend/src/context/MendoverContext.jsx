@@ -9,10 +9,12 @@ const MendoverContextProvider = ({ children }) => {
     const [nhaOData, setNhaOData] = useState([]);
     const [canHoData, setCanHoData] = useState([]);
     const [combinedData, setCombinedData] = useState([]);
+    const [tinTucData, setTinTucData] = useState([]);
 
     useEffect(() => {
         getNhaOData();
         getCanHoData();
+        getTinTucData();
     }, []);
 
     useEffect(() => {
@@ -42,6 +44,16 @@ const MendoverContextProvider = ({ children }) => {
         }
     };
 
+    const getTinTucData = async () => {
+        try {
+            const response = await axios.get(`${url}/api/v1/client/TinTuc`);
+            setTinTucData(response.data.news);
+            console.log(response.data.news);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const shuffleArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -54,6 +66,7 @@ const MendoverContextProvider = ({ children }) => {
         nhaOData,
         canHoData,
         combinedData,
+        tinTucData,
     };
 
     return <MendoverContext.Provider value={contextValue}>{children}</MendoverContext.Provider>;

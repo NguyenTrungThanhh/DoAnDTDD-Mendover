@@ -2,49 +2,49 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-function ListCanHo() {
+function ListTinTuc() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        document.title = 'Mendover | Danh sách căn hộ';
+        document.title = 'Mendover | Danh sách tin tức';
     }, []);
 
-    const fetchCanHo = async () => {
+    const fetchTinTuc = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/v1/admin/CanHo`);
+            const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/v1/admin/TinTuc`);
             if (response.data.success) {
-                setData(response.data.products);
+                setData(response.data.news);
             }
         } catch (error) {
-            toast.error('Lỗi call API Căn Hộ');
+            toast.error('Lỗi call API Tin tức');
         }
     };
 
-    const deleteCanHo = async (id) => {
+    const deleteTinTuc = async (id) => {
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_URL_API}/api/v1/admin/CanHo/delete/${id}`);
+            const response = await axios.delete(`${import.meta.env.VITE_URL_API}/api/v1/admin/TinTuc/delete/${id}`);
             if (response.data.success) {
-                toast.success('Xóa Căn Hộ thành công');
-                fetchCanHo();
+                toast.success('Xóa Tin tức thành công');
+                fetchTinTuc();
             }
         } catch (error) {
-            toast.error('Xóa Căn Hộ thất bại');
+            toast.error('Xóa Tin tức thất bại');
         }
     };
 
     useEffect(() => {
-        fetchCanHo();
+        fetchTinTuc();
     }, []);
 
     return (
         <div className="pt-8 pl-5 sm:pt-12 sm:pl-12">
-            <p>Danh sách Căn Hộ</p>
+            <p>Danh sách Tin tức</p>
             <br />
             <div>
                 <div className="sm:grid hidden grid-cols-5 items-center gap-2.5 p-3 border border-gray-300 text-sm mr-5 bg-gray-100">
                     <b>Ảnh</b>
                     <b className="m-auto">Tên</b>
-                    <b className="m-auto">Giá</b>
+                    <b className="m-auto">Date</b>
                     <b className="m-auto">Mô tả</b>
                     <b className="m-auto">Action</b>
                 </div>
@@ -54,11 +54,11 @@ function ListCanHo() {
                             key={index}
                             className="grid grid-cols-5 items-center gap-2.5 p-3 border border-gray-300 text-sm mr-5 bg-gray-100"
                         >
-                            <img className="w-12" src={item.imageMain} alt="" />
+                            <img className="w-12" src={item.imageBig} alt="" />
                             <p className="m-auto line-clamp-2">{item.name}</p>
-                            <p className="m-auto line-clamp-2">{item.price}</p>
+                            <p className="m-auto line-clamp-2">{item.date}</p>
                             <p className="m-auto line-clamp-2">{item.desc}</p>
-                            <p onClick={() => deleteCanHo(item._id)} className="m-auto cursor-pointer">
+                            <p onClick={() => deleteTinTuc(item._id)} className="m-auto cursor-pointer">
                                 x
                             </p>
                         </div>
@@ -69,4 +69,4 @@ function ListCanHo() {
     );
 }
 
-export default ListCanHo;
+export default ListTinTuc;

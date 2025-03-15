@@ -1,40 +1,12 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import config from '@/configs';
-import { assets, news } from '@/assets/assets';
+import { assets } from '@/assets/assets';
 import CategoryNews from '@/components/CategoryNews';
-import NewsItem from '@/components/NewsItem';
+import { MendoverContext } from '@/context/MendoverContext';
 
 function BatDongSan() {
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const itemsPerPage = 5;
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-    const currentItems = news.slice(indexOfFirstItem, indexOfLastItem);
-
-    const totalPages = news?.length ? Math.ceil(news.length / itemsPerPage) : 1;
-
-    const nextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
-
-    const prevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
-
-    const pageNumbers = [];
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-    }
+    const { tinTucData } = useContext(MendoverContext);
 
     return (
         <div>
@@ -60,7 +32,7 @@ function BatDongSan() {
                         <div className="mt-8">
                             <h1 className="font-bold uppercase">Tin mới cập nhật</h1>
                             <div>
-                                {news.slice(0, 5).map((item, index, arr) => (
+                                {tinTucData.slice(0, 5).map((item, index, arr) => (
                                     <div
                                         key={index}
                                         className={`flex gap-3 my-8 pb-8 ${
@@ -68,13 +40,13 @@ function BatDongSan() {
                                         }`}
                                     >
                                         <div>
-                                            <Link className="block w-20">
+                                            <Link to={config.routes.TinTuc + `/${item.slug}`} className="block w-20">
                                                 <img src={item.imageSmall} alt="" className="w-full h-[41px]" />
                                             </Link>
                                         </div>
                                         <div>
-                                            <Link>
-                                                <h1 className="mb-[10px] hover:text-primary">{item.title}</h1>
+                                            <Link to={config.routes.TinTuc + `/${item.slug}`}>
+                                                <h1 className="mb-[10px] hover:text-primary">{item.name}</h1>
                                             </Link>
                                             <p className="text-primary text-sm font-medium">{item.date}</p>
                                         </div>
@@ -85,9 +57,7 @@ function BatDongSan() {
                     </div>
                     <div className="px-[15px] flex-1">
                         <div className="flex justify-center">
-                            <h1 className="text-[40px] text-primary font-medium">
-                                Tin tức đang được cập nhật !
-                            </h1>
+                            <h1 className="text-[40px] text-primary font-medium">Tin tức đang được cập nhật !</h1>
                         </div>
                     </div>
                 </div>

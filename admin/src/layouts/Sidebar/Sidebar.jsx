@@ -19,10 +19,8 @@ function Sidebar() {
                     <SidebarLink to={config.routes.listNhaO} icon={faCompactDisc} text="Danh sách nhà ở" />
                     <SidebarLink to={config.routes.addCanHo} icon={faCalendarPlus} text="Thêm căn hộ" />
                     <SidebarLink to={config.routes.listCanHo} icon={faCalendar} text="Danh sách căn hộ" />
-                    <SidebarLink to={config.routes.addBatDongSan} icon={faBookMedical} text="Thêm bất động sản" />
-                    <SidebarLink to={config.routes.listBatDongSan} icon={faPodcast} text="Danh sách bất động sản" />
-                    <SidebarLink to={config.routes.addTinNoiBat} icon={faBookMedical} text="Thêm tin nổi bật" />
-                    <SidebarLink to={config.routes.listTinNoiBat} icon={faPodcast} text="Danh sách tin nổi bật" />
+                    <SidebarLink to={config.routes.addTinTuc} icon={faBookMedical} text="Thêm tin tức" />
+                    <SidebarLink to={config.routes.listTinTuc} icon={faPodcast} text="Danh sách tin tức" />
                 </>
             </div>
         </div>
