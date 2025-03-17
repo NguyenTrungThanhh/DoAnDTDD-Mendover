@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { assets } from '@/assets/assets';
 import { useContext } from 'react';
 import { MendoverContext } from '@/context/MendoverContext';
+import config from '@/configs';
 
 function ProductsSelling() {
     const { combinedData } = useContext(MendoverContext);
@@ -16,16 +17,20 @@ function ProductsSelling() {
             <div className="grid grid-cols-3 gap-6">
                 {combinedData.slice(0, 6).map((item, index) => (
                     <div className="flex flex-col" key={index}>
-                        <img src={item.imageMain} alt="" className="w-[370px] h-[280px]" />
+                        <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                            <img src={item.imageMain} alt="" className="w-[370px] h-[280px]" />
+                        </Link>
                         <div className="pt-8">
-                            <h1>{item.name}</h1>
+                            <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                                <h1 className="hover:text-primary">{item.name}</h1>
+                            </Link>
                             <p className="pt-3 text-[#f4304c]">{item.price}</p>
                         </div>
                     </div>
                 ))}
             </div>
             <div className="mt-12 flex justify-center">
-                <Link>
+                <Link to={config.routes.SanPham}>
                     <button className="text-primary uppercase px-7 pt-[10px] pb-[10px] border-2 border-primary hover:bg-primary hover:text-white">
                         Xem thêm
                     </button>

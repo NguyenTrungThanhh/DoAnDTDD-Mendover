@@ -1,11 +1,13 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { assets } from '@/assets/assets';
-import { useContext } from 'react';
 import { MendoverContext } from '@/context/MendoverContext';
+import config from '@/configs';
 
 function ProductPromotional() {
     const { combinedData } = useContext(MendoverContext);
@@ -22,9 +24,13 @@ function ProductPromotional() {
                     {combinedData.map((item, index) => (
                         <SwiperSlide key={index}>
                             <div className="flex flex-col">
-                                <img src={item.imageMain} alt="" className="w-[270px] h-[204px]" />
+                                <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                                    <img src={item.imageMain} alt="" className="w-[270px] h-[204px]" />
+                                </Link>
                                 <div className="pt-4">
-                                    <h1>{item.name}</h1>
+                                    <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                                        <h1 className="hover:text-primary">{item.name}</h1>
+                                    </Link>
                                     <p className="pt-3 text-[#f4304c]">{item.price}</p>
                                 </div>
                             </div>

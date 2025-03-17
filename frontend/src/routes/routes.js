@@ -11,6 +11,8 @@ const NhaO = lazy(() => import('@/pages/NhaO'));
 const CanHo = lazy(() => import('@/pages/CanHo'));
 const BatDongSan = lazy(() => import('@/pages/BatDongSan'));
 const TinNoiBat = lazy(() => import('@/pages/TinNoiBat'));
+const Login = lazy(() => import('@/pages/Login'));
+const Register = lazy(() => import('@/pages/Register'));
 const DisplayNhaO = lazy(() => import('@/components/DisplayNhaO'));
 const DisplayCanHo = lazy(() => import('@/components/DisplayCanHo'));
 const DisplayTinTuc = lazy(() => import('@/components/DisplayTinTuc'));
@@ -31,6 +33,8 @@ const publicRoutes = [
     { path: config.routes.CanHo, component: CanHo },
     { path: config.routes.BatDongSan, component: BatDongSan },
     { path: config.routes.TinNoiBat, component: TinNoiBat },
+    { path: config.routes.DangNhap, component: Login },
+    { path: config.routes.DangKy, component: Register },
 
     // Display Pages
     { path: config.routes.NhaO + '/:slug', component: DisplayNhaO },

@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom';
-import { faBookMedical, faCirclePlus, faCompactDisc, faPodcast } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBookMedical,
+    faBuilding,
+    faEnvelope,
+    faHouse,
+    faHouseMedical,
+    faPlus,
+    faPodcast,
+} from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faCalendarPlus } from '@fortawesome/free-regular-svg-icons';
 import SidebarLink from '@/components/SidebarLink';
 import { assets } from '@/assets/assets';
@@ -15,12 +23,12 @@ function Sidebar() {
             </Link>
             <div className="flex flex-col gap-5 mt-10 w-64">
                 <>
-                    <SidebarLink to={config.routes.addNhaO} icon={faCirclePlus} text="Thêm nhà ở" />
-                    <SidebarLink to={config.routes.listNhaO} icon={faCompactDisc} text="Danh sách nhà ở" />
-                    <SidebarLink to={config.routes.addCanHo} icon={faCalendarPlus} text="Thêm căn hộ" />
-                    <SidebarLink to={config.routes.listCanHo} icon={faCalendar} text="Danh sách căn hộ" />
-                    <SidebarLink to={config.routes.addTinTuc} icon={faBookMedical} text="Thêm tin tức" />
-                    <SidebarLink to={config.routes.listTinTuc} icon={faPodcast} text="Danh sách tin tức" />
+                    <SidebarLink to={config.routes.addNhaO} icon={faHouseMedical} text="Thêm nhà ở" />
+                    <SidebarLink to={config.routes.listNhaO} icon={faHouse} text="Danh sách nhà ở" />
+                    <SidebarLink to={config.routes.addCanHo} icon={faHouseMedical} text="Thêm căn hộ" />
+                    <SidebarLink to={config.routes.listCanHo} icon={faBuilding} text="Danh sách căn hộ" />
+                    <SidebarLink to={config.routes.addTinTuc} icon={faPlus} text="Thêm tin tức" />
+                    <SidebarLink to={config.routes.listTinTuc} icon={faEnvelope} text="Danh sách tin tức" />
                 </>
             </div>
         </div>

@@ -18,9 +18,9 @@ function TinNoiBat() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-    const currentItems = tinTucData.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = tinTucData.slice(4 + indexOfFirstItem, 4 + indexOfLastItem);
 
-    const totalPages = tinTucData?.length ? Math.ceil(tinTucData.length / itemsPerPage) : 1;
+    const totalPages = tinTucData.slice(4).length ? Math.ceil((tinTucData.length - 4) / itemsPerPage) : 1;
 
     const nextPage = () => {
         if (currentPage < totalPages) {
@@ -63,7 +63,7 @@ function TinNoiBat() {
                         <div className="mt-8">
                             <h1 className="font-bold uppercase">Tin mới cập nhật</h1>
                             <div>
-                                {tinTucData.slice(0, 5).map((item, index, arr) => (
+                                {tinTucData.slice(0, 4).map((item, index, arr) => (
                                     <div
                                         key={index}
                                         className={`flex gap-3 my-8 pb-8 ${

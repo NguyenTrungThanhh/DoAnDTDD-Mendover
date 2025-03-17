@@ -1,8 +1,17 @@
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import TippyHeadless from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { assets } from '@/assets/assets';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faCartShopping, faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCartShopping,
+    faChevronDown,
+    faRightFromBracket,
+    faSearch,
+    faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import config from '@/configs';
 
 function Header() {
@@ -123,11 +132,40 @@ function Header() {
                 </div>
 
                 <div>
-                    <FontAwesomeIcon className="cursor-pointer" icon={faUser} />
+                    <TippyHeadless
+                        interactive
+                        // visible
+                        placement="bottom-end"
+                        render={(attrs) => (
+                            <div
+                                className="flex flex-col w-56 bg-white text-sm p-3 mt-2 -mr-3 shadow-lg shadow-black/50"
+                                tabIndex="-1"
+                                {...attrs}
+                            >
+                                <Link to={config.routes.DangNhap}>
+                                    <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
+                                        <FontAwesomeIcon icon={faRightFromBracket} />
+                                        <h1>Đăng nhập</h1>
+                                    </div>
+                                </Link>
+                                <Link to={config.routes.DangKy}>
+                                    <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
+                                        <FontAwesomeIcon icon={faUserPlus} />
+                                        <h1>Đăng ký</h1>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
+                    >
+                        <FontAwesomeIcon className="p-2 cursor-pointer" icon={faUser} />
+                    </TippyHeadless>
                 </div>
-                <div>
-                    <FontAwesomeIcon className="cursor-pointer" icon={faCartShopping} />
-                </div>
+
+                <Tippy content="Giỏ hàng">
+                    <div>
+                        <FontAwesomeIcon className="p-2 cursor-pointer" icon={faCartShopping} />
+                    </div>
+                </Tippy>
             </div>
         </div>
     );

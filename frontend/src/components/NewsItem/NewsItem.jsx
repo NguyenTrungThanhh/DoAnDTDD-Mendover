@@ -13,7 +13,7 @@ function NewsItem(props) {
             </Link>
             <div className="flex flex-col gap-4">
                 <Link to={config.routes.TinTuc + `/${props.slug}`}>
-                    <h1 className="text-2xl hover:text-[#f1805f]">{props.title}</h1>
+                    <h1 className="text-2xl hover:text-[#f1805f]">{props.name}</h1>
                 </Link>
                 <p className="flex items-center gap-2 text-primary text-sm">
                     <FontAwesomeIcon icon={faClock} />

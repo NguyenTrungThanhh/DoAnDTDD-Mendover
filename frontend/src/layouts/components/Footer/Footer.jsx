@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faEnvelope, faLocationDot, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import { assets } from '@/assets/assets';
 import { useEffect, useState } from 'react';
+import config from '@/configs';
 
 function Footer() {
     const [isVisible, setIsVisible] = useState(false);
@@ -72,35 +73,35 @@ function Footer() {
                             <h1 className="text-sm text-primary uppercase font-bold mb-10">Tài khoản</h1>
                             <ul className="flex flex-col gap-6">
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.home}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Trang chủ
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.GioiThieu}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Giới thiệu
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.SanPham}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Sản phẩm
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.TinTuc}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Tin tức
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.LienHe}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Liên hệ
                                         </p>
@@ -112,35 +113,35 @@ function Footer() {
                             <h1 className="text-sm text-primary uppercase font-bold mb-10">Chính sách</h1>
                             <ul className="flex flex-col gap-6">
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.home}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Trang chủ
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.GioiThieu}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Giới thiệu
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.SanPham}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Sản phẩm
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.TinTuc}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Tin tức
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.LienHe}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Liên hệ
                                         </p>
@@ -152,35 +153,35 @@ function Footer() {
                             <h1 className="text-sm text-primary uppercase font-bold mb-10">Điều khoản</h1>
                             <ul className="flex flex-col gap-6">
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.home}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Trang chủ
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.GioiThieu}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Giới thiệu
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.SanPham}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Sản phẩm
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.TinTuc}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Tin tức
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.LienHe}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Liên hệ
                                         </p>
@@ -192,35 +193,35 @@ function Footer() {
                             <h1 className="text-sm text-primary uppercase font-bold mb-10">Hướng dẫn</h1>
                             <ul className="flex flex-col gap-6">
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.home}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Trang chủ
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.GioiThieu}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Giới thiệu
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.SanPham}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Sản phẩm
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.TinTuc}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Tin tức
                                         </p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link>
+                                    <Link to={config.routes.LienHe}>
                                         <p className="text-[#acacac] text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-200">
                                             Liên hệ
                                         </p>

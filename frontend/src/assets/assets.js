@@ -46,6 +46,9 @@ import partner2 from './images/partner/partner2.webp';
 import partner3 from './images/partner/partner3.webp';
 import partner4 from './images/partner/partner4.webp';
 
+import FacebookLogin from './images/icons/login-facebook.svg';
+import GoogleLogin from './images/icons/login-google.svg';
+
 export const assets = {
     logo,
     logoFooter,
@@ -89,4 +92,6 @@ export const assets = {
     partner2,
     partner3,
     partner4,
+    FacebookLogin,
+    GoogleLogin,
 };

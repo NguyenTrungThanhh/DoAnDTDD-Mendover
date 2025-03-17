@@ -63,6 +63,7 @@ const MendoverContextProvider = ({ children }) => {
     };
 
     const contextValue = {
+        url,
         nhaOData,
         canHoData,
         combinedData,

@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { assets } from '@/assets/assets';
 import { MendoverContext } from '@/context/MendoverContext';
+import config from '@/configs';
 
 function ProductStandOut() {
     const { combinedData } = useContext(MendoverContext);
@@ -259,9 +261,13 @@ function ProductStandOut() {
                     <div className="grid grid-cols-2 gap-6">
                         {combinedData.slice(0, 4).map((item, index) => (
                             <div className="flex flex-col" key={index}>
-                                <img src={item.imageMain} alt="" className="w-[370px] h-[280px]" />
+                                <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                                    <img src={item.imageMain} alt="" className="w-[370px] h-[280px]" />
+                                </Link>
                                 <div className="pt-8">
-                                    <h1>{item.name}</h1>
+                                    <Link to={`${config.routes[item.type]}/${item.slug}`}>
+                                        <h1 className="hover:text-primary">{item.name}</h1>
+                                    </Link>
                                     <p className="pt-3 text-[#f4304c]">{item.price}</p>
                                 </div>
                             </div>

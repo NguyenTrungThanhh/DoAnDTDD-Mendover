@@ -8,7 +8,7 @@ import 'swiper/css/thumbs';
 import { toast } from 'react-toastify';
 import { assets } from '@/assets/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera, faChevronDown, faChevronUp, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faCartPlus, faChevronDown, faChevronUp, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link, useParams } from 'react-router-dom';
 import config from '@/configs';
 import { faFacebookF, faGooglePlusG, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -127,14 +127,14 @@ function DisplayNhaO() {
                                     value={quantity}
                                     min={1}
                                     type="text"
-                                    className="w-[100px] h-[45px] text-[#797979] text-center ml-3 border border-[#ebebeb] 
+                                    className="w-[100px] h-[52px] text-[#797979] text-center ml-3 border border-[#ebebeb] 
                                 focus:ring-1 focus:ring-[#c0c0c0] focus:border-[#c0c0c0] 
                                 outline-none transition-all duration-200"
                                 />
 
                                 <div className="flex flex-col gap-1 ml-1">
                                     <button
-                                        className="group flex items-center justify-center w-5 h-5 border border-[#ebebeb] hover:bg-[#e1e1e1]"
+                                        className="group flex items-center justify-center w-6 h-6 border border-[#ebebeb] hover:bg-[#e1e1e1]"
                                         onClick={() => setQuantity(quantity + 1)}
                                     >
                                         <FontAwesomeIcon
@@ -143,7 +143,7 @@ function DisplayNhaO() {
                                         />
                                     </button>
                                     <button
-                                        className="group flex items-center justify-center w-5 h-5 border border-[#ebebeb] hover:bg-[#e1e1e1]"
+                                        className="group flex items-center justify-center w-6 h-6 border border-[#ebebeb] hover:bg-[#e1e1e1]"
                                         onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}
                                     >
                                         <FontAwesomeIcon
@@ -154,8 +154,16 @@ function DisplayNhaO() {
                                 </div>
 
                                 <div className="ml-5">
-                                    <button className="px-7 py-2 bg-primary text-white uppercase hover:bg-[#e1e1e1]">
+                                    <button className="px-7 py-3 h-14 bg-black text-white uppercase hover:bg-[#BF1E2E] rounded-lg duration-300">
                                         Mua ngay
+                                    </button>
+                                </div>
+                                <div className="ml-5">
+                                    <button className="px-7 py-1 h-14 uppercase bg-white text-[#BF1E2E] border border-[#BF1E2E] hover:bg-[#BF1E2E] hover:text-white rounded-lg duration-300">
+                                        <div>
+                                            <FontAwesomeIcon icon={faCartPlus} />
+                                            <p>Thêm vào giỏ hàng</p>
+                                        </div>
                                     </button>
                                 </div>
                             </div>

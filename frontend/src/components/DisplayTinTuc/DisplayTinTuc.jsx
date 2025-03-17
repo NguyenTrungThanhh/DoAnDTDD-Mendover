@@ -68,7 +68,7 @@ function DisplayTinTuc() {
                                 <div className="mt-8">
                                     <h1 className="font-bold uppercase">Tin mới cập nhật</h1>
                                     <div>
-                                        {tinTucData.slice(0, 5).map((item, index, arr) => (
+                                        {tinTucData.slice(0, 4).map((item, index, arr) => (
                                             <div
                                                 key={index}
                                                 className={`flex gap-3 my-8 pb-8 ${

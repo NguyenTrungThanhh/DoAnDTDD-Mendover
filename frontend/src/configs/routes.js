@@ -8,6 +8,8 @@ const routes = {
     NhaO: '/nha-o',
     BatDongSan: '/bat-dong-san',
     TinNoiBat: '/tin-noi-bat',
+    DangNhap: '/login',
+    DangKy: '/register',
 };
 
 export default routes;
