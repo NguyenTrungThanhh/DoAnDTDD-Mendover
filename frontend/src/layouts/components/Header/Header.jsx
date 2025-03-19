@@ -15,6 +15,14 @@ import {
 import config from '@/configs';
 
 function Header() {
+    const handleLogout = () => {
+        // localStorage.removeItem('authToken');
+        // localStorage.removeItem('username');
+        // localStorage.removeItem('userId');
+        // window.location.reload();
+        console.log(1);
+    };
+
     return (
         <div className="flex justify-center items-center gap-32 h-32">
             <Link to={config.routes.home}>
@@ -142,18 +150,40 @@ function Header() {
                                 tabIndex="-1"
                                 {...attrs}
                             >
-                                <Link to={config.routes.DangNhap}>
-                                    <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
-                                        <FontAwesomeIcon icon={faRightFromBracket} />
-                                        <h1>Đăng nhập</h1>
-                                    </div>
-                                </Link>
-                                <Link to={config.routes.DangKy}>
-                                    <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
-                                        <FontAwesomeIcon icon={faUserPlus} />
-                                        <h1>Đăng ký</h1>
-                                    </div>
-                                </Link>
+                                <>
+                                    {localStorage.getItem('userId') ? (
+                                        <>
+                                            <Link to={config.routes.DangNhap}>
+                                                <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
+                                                    <FontAwesomeIcon icon={faRightFromBracket} />
+                                                    <h1>Tài khoản</h1>
+                                                </div>
+                                            </Link>
+                                            <div
+                                                className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]"
+                                                onClick={handleLogout}
+                                            >
+                                                <FontAwesomeIcon icon={faUserPlus} />
+                                                <h1>Đăng xuất</h1>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Link to={config.routes.DangNhap}>
+                                                <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
+                                                    <FontAwesomeIcon icon={faRightFromBracket} />
+                                                    <h1>Đăng nhập</h1>
+                                                </div>
+                                            </Link>
+                                            <Link to={config.routes.DangKy}>
+                                                <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
+                                                    <FontAwesomeIcon icon={faUserPlus} />
+                                                    <h1>Đăng ký</h1>
+                                                </div>
+                                            </Link>
+                                        </>
+                                    )}
+                                </>
                             </div>
                         )}
                     >

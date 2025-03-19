@@ -1,4 +1,4 @@
-const tinTucModel = require('../../../../src/api/v1/models/TinTucModel');
+const tinTucModel = require('../../../../src/api/v1/models/tinTucModel');
 
 const GetAllTinTuc = async () => {
     return await tinTucModel.find({});

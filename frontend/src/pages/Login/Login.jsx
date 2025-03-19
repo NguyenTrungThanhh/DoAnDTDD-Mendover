@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { assets } from '@/assets/assets';
 import config from '@/configs';
-import { faCircleInfo, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Login() {
@@ -19,7 +19,8 @@ function Login() {
         document.title = 'Đăng nhập - Mendover';
     });
 
-    const handleLogin = async () => {
+    const handleLogin = async (e) => {
+        e.preventDefault();
         try {
             const user = {
                 email,
