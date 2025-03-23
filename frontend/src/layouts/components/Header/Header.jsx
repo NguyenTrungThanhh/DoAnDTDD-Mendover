@@ -8,7 +8,8 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import {
     faCartShopping,
     faChevronDown,
-    faRightFromBracket,
+    faLeftLong,
+    faRightToBracket,
     faSearch,
     faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
@@ -16,15 +17,14 @@ import config from '@/configs';
 
 function Header() {
     const handleLogout = () => {
-        // localStorage.removeItem('authToken');
-        // localStorage.removeItem('username');
-        // localStorage.removeItem('userId');
-        // window.location.reload();
-        console.log(1);
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('username');
+        localStorage.removeItem('userId');
+        window.location.reload();
     };
 
     return (
-        <div className="flex justify-center items-center gap-32 h-32">
+        <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-center items-center gap-32 h-32">
             <Link to={config.routes.home}>
                 <div>
                     <img src={assets.logo} alt="" />
@@ -142,7 +142,6 @@ function Header() {
                 <div>
                     <TippyHeadless
                         interactive
-                        // visible
                         placement="bottom-end"
                         render={(attrs) => (
                             <div
@@ -153,9 +152,9 @@ function Header() {
                                 <>
                                     {localStorage.getItem('userId') ? (
                                         <>
-                                            <Link to={config.routes.DangNhap}>
+                                            <Link to={config.routes.TaiKhoan}>
                                                 <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
-                                                    <FontAwesomeIcon icon={faRightFromBracket} />
+                                                    <FontAwesomeIcon icon={faUser} />
                                                     <h1>Tài khoản</h1>
                                                 </div>
                                             </Link>
@@ -163,7 +162,7 @@ function Header() {
                                                 className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]"
                                                 onClick={handleLogout}
                                             >
-                                                <FontAwesomeIcon icon={faUserPlus} />
+                                                <FontAwesomeIcon icon={faLeftLong} />
                                                 <h1>Đăng xuất</h1>
                                             </div>
                                         </>
@@ -171,7 +170,7 @@ function Header() {
                                         <>
                                             <Link to={config.routes.DangNhap}>
                                                 <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary hover:text-white cursor-pointer duration-[350ms]">
-                                                    <FontAwesomeIcon icon={faRightFromBracket} />
+                                                    <FontAwesomeIcon icon={faRightToBracket} />
                                                     <h1>Đăng nhập</h1>
                                                 </div>
                                             </Link>
@@ -192,9 +191,14 @@ function Header() {
                 </div>
 
                 <Tippy content="Giỏ hàng">
-                    <div>
-                        <FontAwesomeIcon className="p-2 cursor-pointer" icon={faCartShopping} />
-                    </div>
+                    <Link to={config.routes.GioHang}>
+                        <div className="relative">
+                            <FontAwesomeIcon className="p-2 cursor-pointer" icon={faCartShopping} />
+                            <span className="absolute top-0 left-5 text-xs bg-primary text-white w-4 h-4 rounded-full text-center">
+                                0
+                            </span>
+                        </div>
+                    </Link>
                 </Tippy>
             </div>
         </div>

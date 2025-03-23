@@ -10,6 +10,9 @@ const routes = {
     TinNoiBat: '/tin-noi-bat',
     DangNhap: '/login',
     DangKy: '/register',
+    TaiKhoan: '/tai-khoan',
+    DoiMatKhau: '/doi-mat-khau',
+    GioHang: '/gio-hang',
 };
 
 export default routes;

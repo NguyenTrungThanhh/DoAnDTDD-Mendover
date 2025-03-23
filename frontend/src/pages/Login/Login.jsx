@@ -34,8 +34,9 @@ function Login() {
 
                 if (token) {
                     localStorage.setItem('authToken', token);
-                    localStorage.setItem('username', response.data.user.name);
                     localStorage.setItem('userId', response.data.user.id);
+                    localStorage.setItem('username', response.data.user.name);
+                    localStorage.setItem('email', response.data.user.email);
 
                     toast.success('Đăng nhập thành công');
                     setTimeout(() => {
@@ -76,7 +77,7 @@ function Login() {
     };
 
     return (
-        <div>
+        <div className="mt-[129px]">
             <div className="relative">
                 <img src={assets.bannerAll} alt="" className="w-full h-[250px] object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center">

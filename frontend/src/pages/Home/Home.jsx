@@ -15,7 +15,7 @@ function Home() {
             <ProductsSelling />
             <BannerService />
             <ProductStandOut />
-            <BannerEvaluate />
+            <BannerEvaluate />  
             <ProductPromotional />
             <Partner />
         </div>

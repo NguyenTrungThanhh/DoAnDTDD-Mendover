@@ -40,7 +40,7 @@ function TinNoiBat() {
     }
 
     return (
-        <div>
+        <div className="mt-[129px]">
             <div className="relative">
                 <img src={assets.bannerAll} alt="" className="w-full h-[250px] object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center">

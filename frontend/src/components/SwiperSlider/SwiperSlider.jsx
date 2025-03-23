@@ -13,7 +13,7 @@ const SwiperSlider = () => {
     ];
 
     return (
-        <div className="w-full relative z-0">
+        <div className="w-full relative z-0 mt-[129px]">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}

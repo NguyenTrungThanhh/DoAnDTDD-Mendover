@@ -54,7 +54,7 @@ function DisplayNhaO() {
     return (
         <>
             {data ? (
-                <div className="mb-32">
+                <div className="mb-32 mt-[129px]">
                     <div className="relative">
                         <img src={assets.bannerAll} alt="" className="w-full h-[250px] object-cover" />
                         <div className="absolute inset-0 flex items-center justify-center">
