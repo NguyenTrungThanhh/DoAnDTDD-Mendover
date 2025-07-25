@@ -32,34 +32,33 @@ function GioHang() {
                     <p>Xóa</p>
                 </div>
                 <div className="grid grid-cols-[1fr_1.5fr_1fr_0.5fr_1fr_0.5fr] items-center text-sm text-center uppercase">
-                    <div className="p-3">
-                        <img src={assets.product1} alt="" className="w-[100px] h-[75px] mx-auto" />
+                    <div className="p-3 border flex justify-center items-center w-full h-[150px]">
+                        <img src={assets.product1} alt="" className="w-[100px] h-[75px]" />
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 border flex justify-center items-center w-full h-[150px]">
                         <p>Căn hộ 3PN ở Pearl Plaza</p>
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 border flex justify-center items-center w-full h-[150px]">
                         <p>3.000.000.000₫</p>
                     </div>
-                    <div className="flex items-center border w-28 h-10 p-3">
+                    <div className="flex items-center justify-center border w-full h-[150px] p-3">
                         <button className="w-12 text-lg">-</button>
-                        <input
-                            value={1}
-                            type="text"
-                            name=""
-                            id=""
-                            className="w-full text-center border-none focus:outline-none"
-                        />
+                        <input value={1} type="text" className="w-full text-center border-none focus:outline-none" />
                         <button className="w-12 text-lg">+</button>
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 border flex justify-center items-center w-full h-[150px]">
                         <p>3.000.000.000₫</p>
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 border flex justify-center items-center w-full h-[150px]">
                         <button>
                             <FontAwesomeIcon icon={faTrash} />
                         </button>
                     </div>
+                </div>
+
+                <div className="flex items-center">
+                    <h1 className="px-5 py-4 border">Tổng tiền thanh toán</h1>
+                    <p className="px-5 py-4 border">3.000.000.000₫</p>
                 </div>
             </div>
         </div>

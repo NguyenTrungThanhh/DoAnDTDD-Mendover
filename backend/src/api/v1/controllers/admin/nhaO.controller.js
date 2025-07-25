@@ -17,7 +17,6 @@ const handlerAddNhaO = async (req, res) => {
         const { name, price } = req.body;
         const desc = req.body.desc ? JSON.parse(req.body.desc) : [];
 
-        // Lấy link ảnh đã upload lên Cloudinary từ multer
         const imageMainUrl = req.files['imageMain'][0].path;
         const imageSubUrl = req.files['imageSub'][0].path;
 
